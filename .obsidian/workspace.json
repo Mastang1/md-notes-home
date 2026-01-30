@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily_work/mpelin-testcases.md",
+                "file": "daily_work/LLCE-LIN-rq.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "mpelin-testcases"
+              "title": "LLCE-LIN-rq"
             }
           }
         ],
@@ -200,11 +200,11 @@
   },
   "active": "db989b63dbdfc5ef",
   "lastOpenFiles": [
-    "daily_work/BUS-LIN/MPE-LIN-controller.md",
+    "daily_work/0Plan.md",
     "daily_work/mpelin-testcases.md",
+    "daily_work/BUS-LIN/MPE-LIN-controller.md",
     "daily_work/BUS-LIN",
     "daily_work/module-plugin-development.md",
-    "daily_work/0Plan.md",
     "daily_work/LLCE-LIN-rq.md",
     "daily_work/Lin_wakeup_check.md",
     "Untitled 1.base",
