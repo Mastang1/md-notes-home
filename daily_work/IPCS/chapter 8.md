@@ -417,22 +417,3 @@ struct ipc_shm_instances_cfg {
 
 **返回** 处理的消息数量，否则返回错误代码。
 
----
-
-# 第九章 修订历史
-
-|Rev|Date|Author|Description|
-|:--|:--|:--|:--|
-|1.00|20-05-2024|IPCF team|针对当前发布的更新|
-
----
-
-# 第十章 支持
-
-如需技术支持，请访问：
-
-- https://www.nxp.com/support
-
-联系 NXP 请访问：
-
-- https://www.nxp.com/about/about-nxp/about-nxp/contact-us:CONTACTUS
