@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "1f91a0cb29458398",
+        "id": "2902f68ce8344919",
         "type": "tabs",
         "children": [
           {
-            "id": "f9b0b7d0a9e4e0c3",
+            "id": "4710c93e84b5629a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily_work/BUS-LIN/MPE-LIN-controller.md",
+                "file": "daily_work/IPCS/chapter 8.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MPE-LIN-controller"
-            }
-          },
-          {
-            "id": "db989b63dbdfc5ef",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "daily_work/LLCE-LIN-rq.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "LLCE-LIN-rq"
+              "title": "chapter 8"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -198,14 +183,29 @@
       "bases:Create new base": false
     }
   },
-  "active": "db989b63dbdfc5ef",
+  "active": "4710c93e84b5629a",
   "lastOpenFiles": [
-    "daily_work/0Plan.md",
-    "daily_work/mpelin-testcases.md",
+    "daily_work/IPCS/chapter 7.md",
+    "daily_work/IPCS/chapter 8.md",
+    "daily_work/IPCS/chapter 6.md",
+    "daily_work/IPCS/chapter 5.md",
+    "daily_work/IPCS/chapter 4.md",
+    "daily_work/IPCS/chapter 2.md",
+    "daily_work/IPCS/chapter 3.md",
+    "daily_work/IPCS/chapter 1.md",
     "daily_work/BUS-LIN/MPE-LIN-controller.md",
-    "daily_work/BUS-LIN",
-    "daily_work/module-plugin-development.md",
+    "daily_work/BUS-LIN/mpelin-configuration.md",
+    "daily_work/IPCS",
+    "Pasted image 20260205154017.png",
+    "Pasted image 20260205153904.png",
+    "Pasted image 20260205153801.png",
+    "arm_develop/Embedded Software Layered Architecture.md",
+    "daily_work/mpelin-testcases.md",
     "daily_work/LLCE-LIN-rq.md",
+    "daily_work/issue.md",
+    "daily_work/module-plugin-development.md",
+    "daily_work/0Plan.md",
+    "daily_work/BUS-LIN",
     "daily_work/Lin_wakeup_check.md",
     "Untitled 1.base",
     "Untitled.base",
@@ -214,21 +214,16 @@
     "study_direction/gemini-advice.md.md",
     "study_direction/Ithink.md.md",
     "daily_work/hif.md",
-    "arm_develop/Embedded Software Layered Architecture.md",
     "daily_work",
     "Untitled.md",
     "arm_develop/bootloader/bootloader.md.md",
     "arm_develop/fatFS.md.md",
     "arm_toolchain/GNU_Make_Functions_CheatSheet.md",
     "arm_toolchain/makefile_etc.md.md",
-    "html_css.md.md",
     "arm_develop/bootloader",
     "arm_develop",
     "arm_toolchain",
-    "test.md",
     "未命名 4.base",
-    "未命名 3.base",
-    "未命名 2.base",
-    "arm_toolchain/linker.md.md"
+    "未命名 3.base"
   ]
 }
