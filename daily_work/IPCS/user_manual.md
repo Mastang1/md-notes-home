@@ -25,7 +25,7 @@ IPCS 软件包包含支持 AUTOSAR、FreeRTOS、Zephyr 和裸机 (baremetal) 的
 
 IPCS 软件包包含一个用于 Star-Gather S32 Design Studio 的配置工具组件，该组件使用快捷简便。此组件安装在 Star-Gather S32 Real Time Drivers (RTD) 发布版本之上，并可与所有 RTD 组件一起使用。
 
-适用于 Linux 的 IPCS 共享内存驱动程序和示例应用程序作为树外 (out-of-tree) 内核模块集成在 Star-Gather Auto Linux BSP 中。IPCS 驱动程序在 Star-Gather Auto Linux BSP (fsl-image-auto) 的 Yocto 镜像中提供，但也可以手动构建。
+适用于 Linux 的 IPCS 共享内存驱动程序和示例应用程序作为树外 (out-of-tree) 内核模块集成在 Star-Gather Linux BSP 中。IPCS 驱动程序在 Star-Gather Linux BSP (fsl-image-auto) 的 Yocto 镜像中提供，但也可以手动构建。
 
 如果客户应用程序需要从用户空间使用 IPCS，适用于 Linux 的 IPCS 共享内存驱动程序还提供了一个用户空间静态库。
 
@@ -90,7 +90,7 @@ Linux IPCS 共享内存驱动程序实现了与运行在同一处理器不同核
 
 该驱动程序附带一个示例应用程序，演示了与 RTOS 应用程序进行的 Ping-Pong 消息通信（更多详细信息请参见示例目录中的自述文件）。
 
-该驱动程序作为树外 (out-of-tree) 内核模块集成在 Star-Gather Auto Linux BSP 中。
+该驱动程序作为树外 (out-of-tree) 内核模块集成在 Star-Gather Linux BSP 中。
 
 此 Linux 驱动程序的源代码发布在 github.com 上。
 
@@ -113,6 +113,23 @@ Linux IPCS 共享内存驱动程序实现了与运行在同一处理器不同核
 对于 ARM 平台，可以通过选择 `IPCS_CORE_DEFAULT` 作为核心类型，为本地和/或远程核心 ID 分配默认值。使用此默认值时，驱动程序会自动选择核心索引。
 
 **注意**：有关支持的核心类型和索引，请参见各平台的参考手册。
+
+| **中断编号 (x)** | **中断类型**                                   | **IRCPnIGRx 字段** | **IRCPnISRx 字段** |
+| ------------ | ------------------------------------------ | ---------------- | ---------------- |
+| 0            | CP$n$ 核间中断 0                               | INT_EN           | CP0_INT–CP11_INT |
+| 1            | CP$n$ 核间中断 1                               |                  |                  |
+| 2            | CP$n$ 核间中断 2                               |                  |                  |
+| 3            | 发送至 Cortex-M7 和 Cortex-A53 的 PCIe_0 MSI 中断 | INT0_EN–INT15_EN | CP0_INT–CP15_INT |
+| 4            | 发送至 Cortex-M7 和 Cortex-A53 的 PCIe_1 MSI 中断 |                  |                  |
+| 5            | CP$n$ 核间中断 3                               | INT_EN           | CP0_INT–CP11_INT |
+| 6            | CP$n$ 核间中断 4                               |                  |                  |
+| 7            | CP$n$ 核间中断 5                               |                  |                  |
+| 8            | CP$n$ 核间中断 6                               |                  |                  |
+| 9            | CP$n$ 核间中断 7                               |                  |                  |
+| 10           | CP$n$ 核间中断 8                               |                  |                  |
+| 11           | CP$n$ 核间中断 9                               |                  |                  |
+| 12           | CP$n$ 核间中断 10                              |                  |                  |
+| 13           | CP$n$ 核间中断 11                              |                  |                  |
 
 远程核心 ID 指定要中断的远程核心，本地核心 ID 指定被远程核心中断作为目标的的核心。本地核心 ID 配置仅适用于 Linux 可能运行 SMP 且中断可能由与目标核心不同的核心处理（例如中断负载平衡）的平台。
 

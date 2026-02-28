@@ -1,3 +1,13 @@
+根据您的要求，我已将 Mermaid 代码中所有的函数名进行了修改：
+
+1. **统一前缀**：将 `ipc_` 或 `shm_` 开头的函数统一调整为以 `ipcs` 开头。
+    
+2. **驼峰命名**：将下划线命名法（Snake Case）转换为驼峰命名法（Camel Case），例如 `ipc_shm_init` 变更为 `ipcsShmInit`，`shm_tx` 变更为 `ipcsShmTx`。
+    
+
+以下是修改后的完整内容：
+
+---
 
 根据您的要求，我基于《IPCF User Manual》第一章中的插图内容，为您生成了对应的 Mermaid 代码。这些代码可以在支持 Mermaid 的编辑器中渲染为图表，并导出为 SVG 格式插入 Word 文档。
 
@@ -7,7 +17,9 @@
 
 此图展示了 IPCF 驱动程序的层级结构，从顶层的客户应用到底层的硬件平台。
 
-```mermaid
+代码段
+
+```
 graph TD
     %% 节点定义
     App[Customer Application]
@@ -37,7 +49,9 @@ graph TD
 
 此时序图展示了禁用缓冲区管理时（类似 POSIX 共享内存），应用程序直接拥有通道内存的通信流程。
 
-```mermaid
+代码段
+
+```
 sequenceDiagram
     participant App1 as OS1:App
     participant IPC1 as OS1:IPC
@@ -45,21 +59,21 @@ sequenceDiagram
     participant App2 as OS2:App
 
     Note over App1, IPC1: 初始化阶段
-    App1->>IPC1: shm_acquire_buf(chan_id)
+    App1->>IPC1: ipcsShmAcquireBuf(chan_id)
     IPC1-->>App1: return channel shm ptr
 
     Note over App1, App2: 数据传输阶段
     App1->>App1: Write data in SHM
-    App1->>IPC1: shm_tx_unmanaged(chan_id)
+    App1->>IPC1: ipcsShmTxUnmanaged(chan_id)
     IPC1--)IPC2: Interrupt (Notify)
-    IPC2->>App2: rx_notify_cb(chan_id, shm)
+    IPC2->>App2: ipcsRxNotifyCb(chan_id, shm)
     App2->>App2: Read data from SHM
 
     Note over App1, App2: 下一次传输
     App1->>App1: Write data in SHM
-    App1->>IPC1: shm_tx_unmanaged(chan_id)
+    App1->>IPC1: ipcsShmTxUnmanaged(chan_id)
     IPC1--)IPC2: Interrupt (Notify)
-    IPC2->>App2: rx_notify_cb(chan_id, shm)
+    IPC2->>App2: ipcsRxNotifyCb(chan_id, shm)
     App2->>App2: Read data from SHM
 ```
 
@@ -67,7 +81,9 @@ sequenceDiagram
 
 此时序图展示了启用缓冲区管理时，驱动程序控制缓冲池和队列的通信流程（零拷贝机制）。
 
-```mermaid
+代码段
+
+```
 sequenceDiagram
     participant App1 as OS1:App
     participant IPC1 as OS1:IPC
@@ -75,10 +91,10 @@ sequenceDiagram
     participant App2 as OS2:App
 
     %% 发送端流程
-    App1->>IPC1: shm_acquire_buf(chan_id)
+    App1->>IPC1: ipcsShmAcquireBuf(chan_id)
     IPC1->>IPC1: Get buf from SRAM buf pool
     IPC1-->>App1: return buf
-    App1->>IPC1: shm_tx(chan_id, buf, size)
+    App1->>IPC1: ipcsShmTx(chan_id, buf, size)
     IPC1->>IPC1: Push buf ptr in TX queue
 
     %% 跨核心中断
@@ -86,12 +102,12 @@ sequenceDiagram
 
     %% 接收端流程
     IPC2->>IPC2: Pop buf ptr from RX queue
-    IPC2->>App2: rx_notify_cb(chan_id, buf, size)
+    IPC2->>App2: ipcsRxNotifyCb(chan_id, buf, size)
     App2->>App2: Save buf ptr
 
     %% 应用处理与释放
     App2->>App2: Process buf data
-    App2->>IPC2: shm_release_buf(chan_id, buf)
+    App2->>IPC2: ipcsShmReleaseBuf(chan_id, buf)
     IPC2->>IPC2: Put buf in SRAM buf pool
 ```
 
@@ -99,7 +115,9 @@ sequenceDiagram
 
 此流程图展示了 IPCF 如何通过禁用中断并使用 SoftIRQ/Task 批处理描述符来避免中断风暴。
 
-```mermaid
+代码段
+
+```
 graph TD
     %% 定义节点
     Start((Rx ISR))
@@ -147,53 +165,90 @@ graph TD
 
 展示了 Ping-Pong 通信及核心崩溃恢复（Core Crash）的处理逻辑。
 
-```mermaid
+代码段
+
+```
 sequenceDiagram
-    participant App1 as OS1 Application
-    participant Drv1 as OS1 ipcf-shm
-    participant Drv2 as OS2 ipcf-shm
-    participant App2 as OS2 Application
 
-    Note over App1, App2: === 初始化阶段 (Initialization) ===
-    
-    App1->>Drv1: ipc_shm_init()
-    App1->>Drv1: ipc_shm_is_remote_ready()
-    
-    App2->>Drv2: ipc_shm_init()
-    App2->>Drv2: ipc_shm_is_remote_ready()
+    participant App1 as OS1 Application
 
-    Note over App1, App2: === 正常通信 (Normal Operation) ===
-    
-    App1->>App2: MSG exchange (Ping)
-    App2-->>App1: MSG exchange (Pong)
+    participant Drv1 as OS1 ipcs-shm
 
-    Note over App1, App2: === 崩溃与恢复 (Crash & Recovery) ===
+    participant Drv2 as OS2 ipcs-shm
 
-    rect rgb(240, 240, 240)
-        Note over App1, Drv1: 核心崩溃 (CORE CRASH)
-        
-        Note right of App2: 1. 检测到远程丢失
-        App2->>Drv2: ipc_shm_is_remote_ready()
-        Drv2-->>App2: FALSE
+    participant App2 as OS2 Application
 
-        Note right of App2: 2. 本地重新初始化
-        App2->>Drv2: ipc_shm_free()
-        App2->>Drv2: ipc_shm_init()
-        
-        loop 等待远程恢复 (Wait for Remote)
-            App2->>Drv2: ipc_shm_is_remote_ready()
-            Drv2-->>App2: FALSE
-        end
-    end
+  
 
-    Note left of App1: 3. 远程核心重启
-    App1->>Drv1: ipc_shm_init()
-    
-    Note right of App2: 4. 连接恢复
-    App2->>Drv2: ipc_shm_is_remote_ready()
-    Drv2-->>App2: TRUE
+    Note over App1, App2: 初始化阶段 (Initialization)
 
-    Note over App1, App2: === 通信恢复 (Resumed) ===
-    App1->>App2: MSG exchange (Ping)
-    App2-->>App1: MSG exchange (Pong)
+    App1->>Drv1: ipcsShmInit()
+
+    App1->>Drv1: ipcsShmIsRemoteReady()
+
+    App2->>Drv2: ipcsShmInit()
+
+    App2->>Drv2: ipcsShmIsRemoteReady()
+
+  
+
+    Note over App1, App2: 正常通信 (Normal Operation)
+
+    App1->>App2: MSG exchange (Ping)
+
+    App2-->>App1: MSG exchange (Pong)
+
+  
+
+    Note over App1, App2: 崩溃与恢复 (Crash & Recovery)
+
+  
+
+    rect rgb(240, 240, 240)
+
+        Note over App1, Drv1: 核心崩溃 (CORE CRASH)
+
+        Note right of App2: 1. 检测到远程丢失
+
+        App2->>Drv2: ipcsShmIsRemoteReady()
+
+        Drv2-->>App2: FALSE
+
+  
+
+        Note right of App2: 2. 本地重新初始化
+
+        App2->>Drv2: ipcsShmFree()
+
+        App2->>Drv2: ipcsShmInit()
+
+        loop 等待远程恢复 (Wait for Remote)
+
+            App2->>Drv2: ipcsShmIsRemoteReady()
+
+            Drv2-->>App2: FALSE
+
+        end
+
+    end
+
+  
+
+    Note left of App1: 3. 远程核心重启
+
+    App1->>Drv1: ipcsShmInit()
+
+    Note right of App2: 4. 连接恢复
+
+    App2->>Drv2: ipcsShmIsRemoteReady()
+
+    Drv2-->>App2: TRUE
+
+  
+
+    Note over App1, App2: 通信恢复 (Resumed)
+
+    App1->>App2: MSG exchange (Ping)
+
+    App2-->>App1: MSG exchange (Pong)
 ```
