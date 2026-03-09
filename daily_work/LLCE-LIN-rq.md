@@ -10,14 +10,14 @@
 - **SWS_Lin_00016**: LIN 驱动程序应将提供的标识符解释为 PID（受保护标识符）。然后，该标识符将按提供原样在 LIN 报头内传输（参见 `Lin_SendFrame`）。
 - **SWS_Lin_00017**: LIN 驱动程序应能够发送 LIN 报头。这由间隔场（Break Field）、同步字节场（Synch Byte Field）和受保护标识符字节场（PID Field）组成，详见 [REF]（参见 `Lin_SendFrame`）。
 - **SWS_Lin_00018**: LIN 驱动程序应能够发送 LIN 报头和响应。
-- **SWS_Lin_00019**: LIN 驱动程序应能够根据当前 LIN PDU 的校验和模型计算“经典”或“增强”校验和。
+<span style="color:rgb(0, 176, 80)">- <b>SWS<i>Lin</i>00019</b>: LIN 驱动程序应能够根据当前 LIN PDU 的校验和模型计算“经典”或“增强”校验和。</span>
 - ==**SWS_Lin_00021**: 如果 LIN 接口请求新的帧传输（参见 `Lin_SendFrame`），LIN 驱动程序应中止当前的帧传输，即使正在进行的传输可能仍在进行中或未成功完成。==
 - **SWS_Lin_00022**: 函数 `Lin_GetStatus` 应返回通道当前帧传输请求的状态。
 - **SWS_Lin_00025**: LIN 驱动程序应发送由 LIN 接口模块提供的响应数据（参见 `Lin_SendFrame`）。
-- **SWS_Lin_00027**: LIN 驱动程序应在不阻塞的情况下启动传输，包括仅在成功接收前一个字节（回读）后才检查下一个字节的传输。
+<span style="color:rgb(0, 176, 80)">- <b>SWS<i>Lin</i>00027</b>: LIN 驱动程序应在不阻塞的情况下启动传输，包括仅在成功接收前一个字节（回读）后才检查下一个字节的传输。</span>
 - **SWS_Lin_00028**: LIN 驱动程序应在不阻塞的情况下接收数据。
 - ==**SWS_Lin_00032**: 当 LIN 通道进入睡眠模式时，它应执行 LIN 硬件单元向低功耗模式的转换（如果可用）（参见 `Lin_GoToSleep`/`Lin_GoToSleepInternal`）。==
-- **SWS_Lin_00033**: 每个 LIN 通道应能够独立于其他通道状态接受睡眠请求（参见 `Lin_GoToSleep`/`Lin_GoToSleepInternal`）。
+- **SWS_Lin_00033**: 每个 LIN 通道应<span style="color:rgb(0, 176, 80)">能够独立于其他通道状态接受睡眠请求（参见 `Lin<i>GoToSleep`/`Lin</i>GoToSleepInternal`）。</span>
 - ==**SWS_Lin_00037**: 当 LIN 通道处于 `LIN_CH_SLEEP` 状态且配置参数 `LinChannelWakeupSupport` 支持唤醒检测时，LIN 硬件单元应监视总线上该通道的唤醒请求。==
 - **SWS_Lin_00043**: `Lin_Wakeup`: 如果 LIN 驱动程序从 LIN 接口接收到唤醒请求，被请求的通道应向 LIN 总线发送唤醒脉冲（参见 `Lin_Wakeup`）。
 - **SWS_Lin_00053**: LIN 驱动程序应直接从上层缓冲区复制数据。
@@ -31,7 +31,10 @@
 - **SWS_Lin_00095**: 函数 `Lin_GoToSleepInternal` 应将通道状态设置为 `LIN_CH_SLEEP`。
 - **SWS_Lin_00096**: 内存与 LIN 帧之间的数据映射定义为：数组元素 0 包含 LSB（最先发送/接收的数据字节），数组元素 (n-1) 包含 MSB（最后发送/接收的数据字节）。
 - ==**SWS_Lin_00097: 如果更改 LIN 硬件控制寄存器导致需要等待状态更改，则应通过可配置的超时机制（`LinTimeoutDuration`）来保护。如果检测到此类超时，应向 DET 或 DEM 报告 `LIN_E_TIMEOUT` 错误。这种情况仅应在 LIN 硬件单元故障时发生，并应通报给系统的其余部分。**==
+- ---
 - ==**SWS_Lin_00098**: `Lin_CheckWakeup` 函数应评估寻址 LIN 通道上的唤醒。当检测到寻址 LIN 通道上的唤醒事件（例如 RxD 引脚具有恒定低电平）时，`Lin_CheckWakeup` 函数应立即通过 `EcuM_SetWakeupEvent` 通知 ECU 状态管理器模块，并通过 `LinIf_WakeupConfirmation` 回调函数通知 Lin 接口模块。==
+- ---
+- 
 - **SWS_Lin_00099**: 如果启用了 Lin 模块的开发错误检测：`Lin_Init` 函数应检查参数 Config 是否在允许范围内。如果 Config 不在允许范围内，`Lin_Init` 函数应抛出开发错误 `LIN_E_INVALID_POINTER`。
 - **SWS_Lin_00105**: 如果启用了 Lin 模块的开发错误检测：`Lin_Init` 函数应检查 Lin 驱动程序是否处于 `LIN_UNINIT` 状态。如果 Lin 驱动程序不处于 `LIN_UNINIT` 状态，`Lin_Init` 函数应抛出开发错误 `LIN_E_STATE_TRANSITION`。
 - **SWS_Lin_00107**: 如果启用了 LIN 模块的开发错误检测：如果在 LIN 模块初始化之前调用函数 `Lin_CheckWakeup`，函数 `Lin_CheckWakeup` 应抛出开发错误 `LIN_E_UNINIT`。
@@ -92,9 +95,14 @@
 - **SWS_Lin_00272**: LIN 驱动程序应能够在 `LIN_CH_OPERATIONAL` 状态下的任何时间接收 LIN 报头。报头由间隔场、同步字节场和受保护标识符字节场组成，详见 [REF]。
 - **SWS_Lin_00273**: LIN 驱动程序应能够发送、接收或忽略 LIN 响应。
 - **SWS_Lin_00274**: 成功接收 LIN 响应后，LIN 驱动程序应通过调用 Rx 指示回调函数 `LinIf_RxIndication` 并将 `Lin_SduPtr` 参数设置为接收数据，直接使接收到的数据对 LIN 接口模块可用。
+- ---
 - ==**SWS_Lin_00275**: 成功发送 LIN 响应后，应通过调用 Tx 确认回调函数 `LinIf_TxConfirmation` 直接向 LIN 接口模块确认发送。==
-- **SWS_Lin_00276**: 如果 LIN 响应被忽略，LIN 驱动程序在接收到新的 LIN 报头之前，不应向 LIN 接口模块报告任何事件。
-- **SWS_Lin_00277**: LIN 驱动程序应检测响应传输和响应接收期间的通信错误。一旦检测到错误，应中止当前帧处理并调用错误指示回调函数 `LinIf_LinErrorIndication`。
+- ---
+- **SWS_Lin_00276**: ==如果 LIN 响应被忽略，==LIN 驱动程序在接收到新的 LIN 报头之前，不应向 LIN 接口模块报告任何事件。
+- ---
+- ==TODO： ERROR report==
+- ==**SWS_Lin_00277**: LIN 驱动程序应检测响应传输和响应接收期间的通信错误。一旦检测到错误，应中止当前帧处理并调用错误指示回调函数 `LinIf_LinErrorIndication`。==
+- ---
 - **SWS_Lin_00280**: 在接收到 LIN 报头时，LIN 驱动程序应调用报头指示回调函数 `LinIf_HeaderIndication`，并将 `PduPtr->Pid` 设置为接收到的 PID 值，将 `PduPtr->SduPtr` 设置为 LIN 驱动程序的（硬件或影子）缓冲区，上层将向该缓冲区写入从节点响应。
 - **SWS_Lin_00281**: 在等待新的 LIN 报头时，如果检测到不符合有效 LIN 报头的总线事件（例如不完整的 LIN 报头），LIN 驱动程序应调用带有错误参数 `LIN_ERR_HEADER` 的错误指示回调函数 `LinIf_LinErrorIndication`。
 - **SWS_Lin_00282**: 在调用 `LinIf_HeaderIndication` 且返回值为 `E_OK` 后，LIN 驱动程序应评估 `PduPtr->Drc` 以确定 LIN 响应的类型。
