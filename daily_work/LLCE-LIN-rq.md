@@ -1,5 +1,12 @@
 以下是将 `lin_request.txt` 及相关需求源文件中的条目整理翻译为中文的结果。全表共收录 167 条需求，已根据其性质（功能性、接口、配置、常规/其他）进行了分类分组。
 
+
+这个是一个重要的待验证需求：
+
+**被忽略帧的“静默”机制**
+
+<span style="color:rgb(255, 0, 0)">- <b>处理逻辑</b>：如果LinIf在收到报头后，判定该帧与自己无关并指示底层驱动忽略（Ignore）该响应，那么在接下来直到下一个新报头到来之前，无论总线上发生什么错误，LIN Driver <b>都不允许向上层报告任何事件或错误</b>。</span>
+---
 ### 1. 功能性需求 (Functional Requirements)
 
 这些需求定义了 LIN 驱动程序的核心行为、状态机管理、帧传输逻辑以及错误处理机制。
@@ -23,7 +30,7 @@
 - **SWS_Lin_00053**: LIN 驱动程序应直接从上层缓冲区复制数据。
 - **SWS_Lin_00060**: 完整的 LIN 帧接收处理（包括复制到目标层）可以在 ISR 中实现。接收到的数据应保持一致，直到成功接收到下一个 LIN 帧或 LIN 通道状态发生变化。
 - **SWS_Lin_00063**: 旨在支持从简单的 SCI/UART 到复杂的 LIN 硬件控制器的各种 LIN 硬件。使用 SW-UART（软件模拟串口）实现不在本范围内。有关 LIN 硬件单元的详细描述，请参阅相关章节 [REF]。
-- ==**SWS_Lin_00074**: 函数 `Lin_GoToSleep` 应终止先前传输请求中正在进行的帧传输，即使传输未成功完成。==
+<span style="color:rgb(255, 0, 0)">- ==<b>SWS<i>Lin</i>00074</b>: 函数 `Lin_GoToSleep` 应终止先前传输请求中正在进行的帧传输，即使传输未成功完成。==</span>
 - **SWS_Lin_00084**: 函数 `Lin_Init` 应初始化 Lin 模块（即静态变量，包括标志位和 LIN 硬件单元全局硬件设置），以及 LIN 通道。
 - ==**SWS_Lin_00089**: 函数 `Lin_GoToSleep` 应在寻址的 LIN 通道上发送 LIN 规范 2.1 中定义的“进入睡眠”命令。==
 - **SWS_Lin_00091**: 函数 `Lin_GetStatus` 应返回 LIN 驱动程序的当前传输、接收或操作状态。
@@ -34,8 +41,19 @@
 - ---
 - ==**SWS_Lin_00098**: `Lin_CheckWakeup` 函数应评估寻址 LIN 通道上的唤醒。当检测到寻址 LIN 通道上的唤醒事件（例如 RxD 引脚具有恒定低电平）时，`Lin_CheckWakeup` 函数应立即通过 `EcuM_SetWakeupEvent` 通知 ECU 状态管理器模块，并通过 `LinIf_WakeupConfirmation` 回调函数通知 Lin 接口模块。==
 - ---
-- 
-- **SWS_Lin_00099**: 如果启用了 Lin 模块的开发错误检测：`Lin_Init` 函数应检查参数 Config 是否在允许范围内。如果 Config 不在允许范围内，`Lin_Init` 函数应抛出开发错误 `LIN_E_INVALID_POINTER`。
+- 1. init configuration is NULL
+- 2. getVersionInfo parameter is NULL
+- ---
+- 3. getStatus same as 4
+- 4. call method before call Init API - checkwakeup
+- 5.  same as 4, call sendframe
+- 6.  same as 4, call gotosleep
+- 7. same as 4, call gotosleepinternal
+- 8.  same as 4, call wakeup
+- 9. same as 4, call wakeupInternal
+- 10. getStatus pointer is NULL
+- 11.  重复初始化
+<span style="color:rgb(0, 176, 80)">- <b>SWS<i>Lin</i>00099</b>: 如果启用了 Lin 模块的开发错误检测：`Lin<i>Init` 函数应检查参数 Config 是否在允许范围内。如果 Config 不在允许范围内，`Lin</i>Init` 函数应抛出开发错误 `LIN<i>E</i>INVALID_POINTER`。</span>
 - **SWS_Lin_00105**: 如果启用了 Lin 模块的开发错误检测：`Lin_Init` 函数应检查 Lin 驱动程序是否处于 `LIN_UNINIT` 状态。如果 Lin 驱动程序不处于 `LIN_UNINIT` 状态，`Lin_Init` 函数应抛出开发错误 `LIN_E_STATE_TRANSITION`。
 - **SWS_Lin_00107**: 如果启用了 LIN 模块的开发错误检测：如果在 LIN 模块初始化之前调用函数 `Lin_CheckWakeup`，函数 `Lin_CheckWakeup` 应抛出开发错误 `LIN_E_UNINIT`。
 - **SWS_Lin_00129**: 如果启用了 LIN 模块的开发错误检测：如果在 LIN 模块初始化之前调用函数 `Lin_GoToSleep`，函数 `Lin_GoToSleep` 应抛出开发错误 `LIN_E_UNINIT`。
@@ -44,9 +62,9 @@
 - **SWS_Lin_00135**: 如果启用了 LIN 模块的开发错误检测：如果通道参数无效，函数 `Lin_GoToSleepInternal` 应抛出开发错误 `LIN_E_INVALID_CHANNEL`。
 - **SWS_Lin_00137**: 如果启用了 LIN 模块的开发错误检测：如果在 LIN 模块初始化之前调用函数 `Lin_Wakeup`，函数 `Lin_Wakeup` 应抛出开发错误 `LIN_E_UNINIT`。
 - **SWS_Lin_00139**: 如果启用了 LIN 模块的开发错误检测：如果通道参数无效或通道未激活，函数 `Lin_Wakeup` 应抛出开发错误 `LIN_E_INVALID_CHANNEL`。
-- ==**SWS_Lin_00140**: 如果启用了 LIN 模块的开发错误检测：如果 LIN 通道状态机不处于 `LIN_CH_SLEEP` 状态，函数 `Lin_Wakeup` 应抛出开发错误 `LIN_E_STATE_TRANSITION`。==
+<span style="color:rgb(0, 176, 80)">- <b>SWS<i>Lin</i>00140</b>: 如果启用了 LIN 模块的开发错误检测：如果 LIN 通道状态机不处于 `LIN<i>CH</i>SLEEP` 状态，函数 `Lin<i>Wakeup` 应抛出开发错误 `LIN</i>E<i>STATE</i>TRANSITION`。</span>
 - **SWS_Lin_00141**: 如果启用了 LIN 模块的开发错误检测：如果在 LIN 模块初始化之前调用函数 `Lin_GetStatus`，函数 `Lin_GetStatus` 应抛出开发错误 `LIN_E_UNINIT`，否则（如果禁用了 DET）返回 `LIN_NOT_OK`。
-- **SWS_Lin_00143**: 如果启用了 LIN 模块的开发错误检测：如果通道参数无效或通道未激活，函数 `Lin_GetStatus` 应抛出开发错误 `LIN_E_INVALID_CHANNEL`，否则（如果禁用了 DET）返回 `LIN_NOT_OK`。
+<span style="color:rgb(255, 0, 0)">- <b>SWS<i>Lin</i>00143</b>: 如果启用了 LIN 模块的开发错误检测：如果通道参数无效或通道未激活，函数 `Lin<i>GetStatus` 应抛出开发错误 `LIN</i>E<i>INVALID</i>CHANNEL`，否则（如果禁用了 DET）返回 `LIN<i>NOT</i>OK`。</span>
 - **SWS_Lin_00144**: 如果启用了 LIN 模块的开发错误检测：函数 `Lin_GetStatus` 应检查参数 `Lin_SduPtr` 是否不为 NULL 指针。如果 `Lin_SduPtr` 为 NULL 指针，函数 `Lin_GetStatus` 应抛出开发错误 `LIN_E_PARAM_POINTER`，否则（如果禁用了 DET）返回 `LIN_NOT_OK`。
 - **SWS_Lin_00145**: Reset -> LIN_UNINIT: 复位后，Lin 模块应将其状态设置为 `LIN_UNINIT`。（表示MCU reset后的状态，也就是要求global的初始值为LIN_UNINIT）
 - **SWS_Lin_00146**: LIN_UNINIT -> LIN_INIT: 当调用函数 `Lin_Init` 时，Lin 模块应从 `LIN_UNINIT` 转换到 `LIN_INIT`。
