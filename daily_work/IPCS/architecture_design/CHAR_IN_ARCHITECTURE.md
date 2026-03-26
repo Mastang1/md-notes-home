@@ -378,14 +378,14 @@ API-->>APP: success
 
 ## ✔ 函数命名一致性
 
-|原函数|新函数|
-|---|---|
-|ipc_shm_init|ipcsShmInit|
-|ipc_shm_tx|ipcsShmTx|
-|ipc_shm_acquire_buf|ipcsShmAcquireBuf|
-|ipc_shm_release_buf|ipcsShmReleaseBuf|
-|ipc_shm_poll_channels|ipcsShmPollChannels|
-|ipc_hw_irq_notify|ipcsHwIrqNotify|
+| 原函数                   | 新函数                 |
+| --------------------- | ------------------- |
+| ipc_shm_init          | ipcsShmInit         |
+| ipc_shm_tx            | ipcsShmTx           |
+| ipc_shm_acquire_buf   | ipcsShmAcquireBuf   |
+| ipc_shm_release_buf   | ipcsShmReleaseBuf   |
+| ipc_shm_poll_channels | ipcsShmPollChannels |
+| ipc_hw_irq_notify     | ipcsHwIrqNotify     |
 
 ✔ 符合你要求：
 
