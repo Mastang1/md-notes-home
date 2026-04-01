@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily_work/IPCS/architecture_design/CHAR_IN_ARCHITECTURE.md",
-                "mode": "source",
+                "file": "daily_work/IPCS/architecture_design/architecture_v2.0.0.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CHAR_IN_ARCHITECTURE"
+              "title": "architecture_v2.0.0"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily_work/IPCS/architecture_design/CHAR_IN_ARCHITECTURE.md",
+                "file": "daily_work/IPCS/architecture_design/architecture_v2.0.0.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "CHAR_IN_ARCHITECTURE 的大纲"
+              "title": "architecture_v2.0.0 的大纲"
             }
           }
         ],
@@ -170,8 +170,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 370.5,
-    "collapsed": true
+    "width": 370.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -186,11 +185,13 @@
   },
   "active": "c246ff9dcd57dc10",
   "lastOpenFiles": [
-    "daily_work/IPCS/architecture_design/architecture_v2.0.0.md",
     "daily_work/IPCS/architecture_design/CHAR_IN_ARCHITECTURE.md",
-    "daily_work/IPCS/architecture_design/architecture_doc.md",
-    "daily_work/IPCS/architecture_design/temp.md",
     "daily_work/IPCS/architecture_design/requirement.md",
+    "daily_work/IPCS/architecture_design/temp.md",
+    "daily_work/IPCS/architecture_design/architecture_v2.0.0.md",
+    "daily_work/IPCS/architecture_design/architecture_doc.md",
+    "daily_work/IPCS/QAC_NOTES/-macro.md",
+    "daily_work/IPCS/QAC_NOTES",
     "daily_work/BUS-LIN/err-check-2-mode.md",
     "daily_work/IPCS/architecture_design",
     "daily_work/BUS-LIN/被动唤醒过程.md",
@@ -218,7 +219,6 @@
     "daily_work/IPCS/release_notes.md",
     "daily_work/IPCS/ai_output/framework.md",
     "daily_work/IPCS/graph/chapter 1.md",
-    "daily_work/IPCS/chapter 1.md",
     "daily_work/IPCS/ai_output",
     "daily_work/IPCS/graph",
     "daily_work/IPCS",
@@ -228,7 +228,6 @@
     "daily_work/BUS-LIN",
     "Untitled 1.base",
     "Untitled.base",
-    "Pasted image 20251217000504.png",
-    "daily_work"
+    "Pasted image 20251217000504.png"
   ]
 }
