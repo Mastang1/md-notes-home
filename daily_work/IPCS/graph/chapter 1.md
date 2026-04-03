@@ -19,7 +19,7 @@
 
 代码段
 
-```
+```mermaid
 graph TD
     %% 节点定义
     App[Customer Application]
