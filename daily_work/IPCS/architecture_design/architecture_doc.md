@@ -925,7 +925,37 @@ flowchart TD
 | ipc_shm_instances_cfg | 实例个数与每实例 ipc_shm_cfg 指针数组 |
 
 | ipc_shm_cfg | 本地/远端 SHM 物理基址与长度、通道数、通道数组、跨核 IRQ 编号、本地/远端核类型与索引等 |
+# X. 软件架构设计 (Software Architecture Design)
 
+## X.1 软件架构分层视图 (Architectural Layered View)
+**【说明】**：展示软件的整体层次分解结构（如应用层、服务层、微控制器抽象层等）。
+*   **架构图**：[插入UML包图或组件图，展示层次及元素结构]
+*   **层级职责描述**：简述各层的主要职责与边界。
+
+## X.2 软件组件描述 (Software Components Description)
+**【说明】**：针对架构图中最底层的“软件组件”进行逐一说明。
+
+### X.2.1 组件：[组件名称，如 Component_A]
+*   **功能描述**：简述该组件的目的和实现的主要功能。
+*   **需求分配 (Traceability)**：列出分配给该组件的软件需求ID（满足 SWE.2.BP2 要求）。
+*   **来源类型**：[自研代码 / 第三方库 / 遗留复用代码]
+*   **动态行为与任务分配**：说明该组件运行的上下文（如：在 10ms 定时器任务中调度，或由外部中断触发）。
+*   **资源消耗目标**：评估的最大 RAM/ROM 占用及 CPU 负载限制。
+
+## X.3 组件接口与依赖设计 (Component Interfaces and Dependencies)
+**【说明】**：详细定义组件如何与外部环境及其他组件交互。
+
+### X.3.1 对外提供接口 (Provided Interfaces)
+**【说明】**：该组件暴露给上层或其他组件调用的API或数据。
+| 接口名称/服务名 | 参数 (IN/OUT) | 返回值 | 功能描述 | 通信机制/协议 (如API, IPC, 全局变量) |
+| :--- | :--- | :--- | :--- | :--- |
+| [Interface_Name] | [Params] | [Return] | [Description] | [Mechanism] |
+
+### X.3.2 依赖服务接口 (Required Interfaces / Dependencies)
+**【说明】**：该组件为了实现自身功能，必须调用的下层组件API或依赖的外部服务。
+| 依赖接口/服务名 | 提供方组件 | 依赖原因/场景描述 | 依赖契约/前置条件 |
+| :--- | :--- | :--- | :--- |
+| [Required_Interface] | [Provider_Comp] | [Why it is needed] | [Pre-conditions for calling] |
 | ipc_shm_channel_cfg | 通道类型（受管 / 非受管）与联合体成员 |
 
 | ipc_shm_managed_cfg | 池个数、池参数数组、**rx_cb**、cb_arg |
