@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d5bd740e252ecaef",
+        "id": "015fab5ae3d08023",
         "type": "tabs",
         "children": [
           {
-            "id": "de8fcc83d393e3a3",
+            "id": "1bf60dcae61d3a58",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily_work/IPCS/0-linux-ipcs-theory.md",
+                "file": "daily_work/unit_test/Flow of every layer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0-linux-ipcs-theory"
+              "title": "Flow of every layer"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily_work/IPCS/0-linux-ipcs-theory.md",
+                "file": "daily_work/unit_test/Flow of every layer.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "0-linux-ipcs-theory 的大纲"
+              "title": "Flow of every layer 的大纲"
             }
           }
         ],
@@ -184,11 +184,16 @@
       "bases:新建数据库": false
     }
   },
-  "active": "de8fcc83d393e3a3",
+  "active": "1bf60dcae61d3a58",
   "lastOpenFiles": [
+    "daily_work/unit_test/Vcast Summary.md",
+    "daily_work/unit_test/Flow of every layer.md",
+    "daily_work/IPCS/architecture_design/requirement.md",
+    "daily_work/unit_test",
+    "temp_descricption.md",
     "daily_work/IPCS/architecture_design/architecture_doc.md",
-    "daily_work/IPCS/0-linux-ipcs-theory.md",
     "daily_work/IPCS/architecture_design/architecture_v2.0.0.md",
+    "daily_work/IPCS/0-linux-ipcs-theory.md",
     "daily_work/IPCS/architecture_design/design_notes.md",
     "daily_work/IPCS/architecture_design/temp.md",
     "daily_work/IPCS/chapter 3.md",
@@ -196,7 +201,6 @@
     "daily_work/IPCS/chapter 1.md",
     "daily_work/IPCS/QAC_NOTES/Helix Summary.md",
     "daily_work/IPCS/QAC_NOTES/-macro.md",
-    "daily_work/IPCS/architecture_design/requirement.md",
     "daily_work/IPCS/ai_output/framework.md",
     "daily_work/IPCS/user_manual.md",
     "daily_work/IPCS/user_manual_original.md",
@@ -212,12 +216,9 @@
     "daily_work/mpelin-testcases.md",
     "daily_work/module-plugin-development.md",
     "daily_work/BUS-LIN/mpelin-configuration.md",
-    "daily_work/BUS-LIN/MPE-LIN-controller.md",
     "SWC RTE LINIF Data Pipeline-2026-03-09-073046.png",
-    "daily_work/tcf_server/S32G boot note.md",
     "Pasted image 20260306191336.png",
     "SWC RTE LINIF Data Pipeline-2026-03-06-090819.png",
-    "temp_descricption.md",
     "daily_work/tcf_server/Untitled",
     "daily_work/tcf_server",
     "daily_work/IPCS/ai_output",
@@ -228,7 +229,6 @@
     "Pasted image 20260205153801.png",
     "daily_work/BUS-LIN",
     "Untitled 1.base",
-    "Untitled.base",
     "Pasted image 20251217000504.png"
   ]
 }
