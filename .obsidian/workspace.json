@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily_work/unit_test/Flow of every layer.md",
+                "file": "daily_work/unit_test/user-code_optional.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Flow of every layer"
+              "title": "user-code_optional"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily_work/unit_test/Flow of every layer.md",
+                "file": "daily_work/unit_test/user-code_optional.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Flow of every layer 的大纲"
+              "title": "user-code_optional 的大纲"
             }
           }
         ],
@@ -186,7 +186,13 @@
   },
   "active": "1bf60dcae61d3a58",
   "lastOpenFiles": [
-    "daily_work/unit_test/Vcast Summary.md",
+    "Pasted image 20260422112550.png",
+    "daily_work/unit_test/Environment_user_code.md",
+    "daily_work/unit_test/Vcast_Summary-PROJECT.md",
+    "daily_work/unit_test/Vcast_Summary-DEVELOPMENT.md",
+    "daily_work/unit_test/user-code_optional.md",
+    "daily_work/unit_test/未命名.md",
+    "daily_work/unit_test/same_func_different_ret.md",
     "daily_work/unit_test/Flow of every layer.md",
     "daily_work/IPCS/architecture_design/requirement.md",
     "daily_work/unit_test",
@@ -209,13 +215,7 @@
     "daily_work/IPCS/QAC_NOTES",
     "daily_work/BUS-LIN/err-check-2-mode.md",
     "daily_work/IPCS/architecture_design",
-    "daily_work/BUS-LIN/被动唤醒过程.md",
-    "daily_work/BUS-LIN/todo.md",
     "Pasted image 20260313184516.png",
-    "daily_work/LLCE-LIN-rq.md",
-    "daily_work/mpelin-testcases.md",
-    "daily_work/module-plugin-development.md",
-    "daily_work/BUS-LIN/mpelin-configuration.md",
     "SWC RTE LINIF Data Pipeline-2026-03-09-073046.png",
     "Pasted image 20260306191336.png",
     "SWC RTE LINIF Data Pipeline-2026-03-06-090819.png",
