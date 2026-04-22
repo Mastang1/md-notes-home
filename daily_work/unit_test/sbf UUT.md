@@ -1,0 +1,3 @@
+_sbf 在当前UUT中不打桩，外部依赖都是stubbed_
+_UUT所有当前文件中的functions都不具有打桩支持_
+
