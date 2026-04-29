@@ -11,10 +11,14 @@
             "id": "633f595276739fe9",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "daily_work/IPCS/update-plugin/update ipcs plugin guidance.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "update ipcs plugin guidance"
             }
           }
         ]
@@ -152,12 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "daily_work/IPCS/update-plugin/update ipcs plugin guidance.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "update ipcs plugin guidance 的大纲"
             }
           }
         ],
@@ -181,10 +186,14 @@
   },
   "active": "633f595276739fe9",
   "lastOpenFiles": [
+    "EB-tresos-generator/update-config.md",
+    "daily_work/IPCS/update-plugin/update ipcs plugin guidance.md",
+    "daily_work/IPCS/update-plugin",
+    "EB-tresos-generator/update-plugins-version.md",
+    "EB-tresos-generator/plugins/mcal-driver-update-versions.md",
+    "EB-tresos-generator/plugins/plugin_xml.md",
     "daily_work/IPCS/QAC_NOTES/Helix Summary.md",
     "EB-tresos-generator/plugins/UUID.md",
-    "EB-tresos-generator/plugins/plugin_xml.md",
-    "EB-tresos-generator/plugins/mcal-driver-update-versions.md",
     "EB-tresos-generator/plugins",
     "EB-tresos-generator/7-2/XPath_demo.md",
     "EB-tresos-generator/7-2/module_code_generator.md",
@@ -209,16 +218,12 @@
     "EB-tresos-generator/5-2/101-112CreateNewModule.md",
     "EB-tresos-generator/5-2",
     "EB-tresos-generator/5-1/chapter5.md",
-    "EB-tresos-generator/5-1/81-89(ch5-2).md",
-    "EB-tresos-generator/5-1/90-96.md",
-    "EB-tresos-generator/5-1/76-81.md",
     "EB-tresos-generator/5-1",
     "EB-tresos-generator",
     "SWC RTE LINIF Data Pipeline-2026-03-06-090819.png",
     "未命名 1.base",
     "未命名.base",
     "Pasted image 20260422112550.png",
-    "daily_work/unit_test",
     "Pasted image 20260313184516.png",
     "SWC RTE LINIF Data Pipeline-2026-03-09-073046.png",
     "Pasted image 20260306191336.png",
