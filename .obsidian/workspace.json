@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "a5d59c526c5b6844",
+        "id": "98933d39e0e9e10e",
         "type": "tabs",
         "children": [
           {
-            "id": "08e10c6dc81dd5b6",
+            "id": "633f595276739fe9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "daily_work/unit_test/Vcast-CLI.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Vcast-CLI"
+              "title": "新标签页"
             }
           }
         ]
@@ -156,13 +152,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily_work/unit_test/Vcast-CLI.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Vcast-CLI 的大纲"
+              "title": "大纲"
             }
           }
         ],
@@ -184,49 +179,49 @@
       "bases:新建数据库": false
     }
   },
-  "active": "08e10c6dc81dd5b6",
+  "active": "633f595276739fe9",
   "lastOpenFiles": [
-    "daily_work/unit_test/vcast-print in UI.md",
-    "daily_work/unit_test/Vcast-CLI.md",
-    "daily_work/unit_test/Choose_UUTs_and_Stubs.md",
-    "daily_work/unit_test/Vcast_Summary-DEVELOPMENT.md",
-    "daily_work/unit_test/sbf UUT.md",
-    "daily_work/unit_test/Environment_user_code.md",
+    "daily_work/IPCS/QAC_NOTES/Helix Summary.md",
+    "EB-tresos-generator/plugins/UUID.md",
+    "EB-tresos-generator/plugins/plugin_xml.md",
+    "EB-tresos-generator/plugins/mcal-driver-update-versions.md",
+    "EB-tresos-generator/plugins",
+    "EB-tresos-generator/7-2/XPath_demo.md",
+    "EB-tresos-generator/7-2/module_code_generator.md",
+    "EB-tresos-generator/7-2/model_generator_cmd_list.md",
+    "EB-tresos-generator/7-2/256-266.md",
+    "EB-tresos-generator/7-2/251-256.md",
+    "EB-tresos-generator/7-2/241-250.md",
+    "EB-tresos-generator/7-2",
+    "EB-tresos-generator/6-config-modules/XPath_generic.md",
+    "EB-tresos-generator/6-config-modules/XPath_expression refer to chapter 6-3.md",
+    "EB-tresos-generator/6-config-modules/lst-ctl-temple(NB generated).md",
+    "EB-tresos-generator/6-config-modules/147-170GUI.md",
+    "EB-tresos-generator/6-config-modules/0start-147.md",
+    "EB-tresos-generator/6-config-modules",
+    "EB-tresos-generator/5-3/136-146.md",
+    "EB-tresos-generator/5-3/125-135.md",
+    "EB-tresos-generator/5-3/114-124.md",
+    "EB-tresos-generator/5-3/05.3-start.md",
+    "EB-tresos-generator/5-3",
+    "EB-tresos-generator/5-2/90-100(99important).md",
+    "EB-tresos-generator/5-2/5-2-1-81_90.md",
+    "EB-tresos-generator/5-2/101-112CreateNewModule.md",
+    "EB-tresos-generator/5-2",
+    "EB-tresos-generator/5-1/chapter5.md",
+    "EB-tresos-generator/5-1/81-89(ch5-2).md",
+    "EB-tresos-generator/5-1/90-96.md",
+    "EB-tresos-generator/5-1/76-81.md",
+    "EB-tresos-generator/5-1",
+    "EB-tresos-generator",
+    "SWC RTE LINIF Data Pipeline-2026-03-06-090819.png",
     "未命名 1.base",
     "未命名.base",
-    "daily_work/unit_test/user-code_optional.md",
     "Pasted image 20260422112550.png",
-    "daily_work/unit_test/Vcast_Summary-PROJECT.md",
-    "daily_work/unit_test/same_func_different_ret.md",
-    "daily_work/unit_test/Flow of every layer.md",
-    "daily_work/IPCS/architecture_design/requirement.md",
     "daily_work/unit_test",
-    "temp_descricption.md",
-    "daily_work/IPCS/architecture_design/architecture_doc.md",
-    "daily_work/IPCS/architecture_design/architecture_v2.0.0.md",
-    "daily_work/IPCS/0-linux-ipcs-theory.md",
-    "daily_work/IPCS/architecture_design/design_notes.md",
-    "daily_work/IPCS/architecture_design/temp.md",
-    "daily_work/IPCS/chapter 3.md",
-    "daily_work/IPCS/chapter 2.md",
-    "daily_work/IPCS/chapter 1.md",
-    "daily_work/IPCS/QAC_NOTES/Helix Summary.md",
-    "daily_work/IPCS/QAC_NOTES/-macro.md",
-    "daily_work/IPCS/ai_output/framework.md",
-    "daily_work/IPCS/user_manual.md",
-    "daily_work/IPCS/user_manual_original.md",
-    "daily_work/IPCS/graph/chapter 1.md",
-    "daily_work/IPCS/QAC_NOTES",
-    "daily_work/IPCS/architecture_design",
     "Pasted image 20260313184516.png",
     "SWC RTE LINIF Data Pipeline-2026-03-09-073046.png",
     "Pasted image 20260306191336.png",
-    "SWC RTE LINIF Data Pipeline-2026-03-06-090819.png",
-    "daily_work/tcf_server/Untitled",
-    "daily_work/tcf_server",
-    "daily_work/IPCS/ai_output",
-    "daily_work/IPCS/graph",
-    "daily_work/IPCS",
     "Pasted image 20260205154017.png",
     "Pasted image 20260205153904.png",
     "Pasted image 20260205153801.png",
