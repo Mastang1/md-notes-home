@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "98933d39e0e9e10e",
+        "id": "df006f3fd124e9f1",
         "type": "tabs",
         "children": [
           {
-            "id": "633f595276739fe9",
+            "id": "0bcc910129ebadc5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily_work/IPCS/update-plugin/update ipcs plugin guidance.md",
+                "file": "daily_work/tcf_server-boot/summary.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "update ipcs plugin guidance"
+              "title": "summary"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "blob",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -61,7 +61,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "Search"
+              "title": "搜索"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily_work/IPCS/update-plugin/update ipcs plugin guidance.md",
+                "file": "daily_work/IPCS/ai_output/framework.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "update ipcs plugin guidance 的大纲"
+              "title": "framework 的大纲"
             }
           }
         ],
@@ -170,7 +170,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 370.5
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -181,55 +182,57 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false
+      "bases:新建数据库": false,
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "633f595276739fe9",
+  "active": "0bcc910129ebadc5",
   "lastOpenFiles": [
-    "EB-tresos-generator/update-config.md",
-    "daily_work/IPCS/update-plugin/update ipcs plugin guidance.md",
-    "daily_work/IPCS/update-plugin",
-    "EB-tresos-generator/update-plugins-version.md",
-    "EB-tresos-generator/plugins/mcal-driver-update-versions.md",
-    "EB-tresos-generator/plugins/plugin_xml.md",
+    "daily_work/tcf_server-boot/S 32G 安全启动 补充.md",
+    "daily_work/tcf_server-boot/summary.md",
+    "daily_work/tcf_server-boot/S32G boot note.md",
+    "daily_work/IPCS/ai_output/framework.md",
+    "daily_work/IPCS/0-linux-ipcs-theory.md",
+    "daily_work/unit_test/vcast-print in UI.md",
+    "daily_work/unit_test/Vcast-CLI.md",
     "daily_work/IPCS/QAC_NOTES/Helix Summary.md",
-    "EB-tresos-generator/plugins/UUID.md",
-    "EB-tresos-generator/plugins",
-    "EB-tresos-generator/7-2/XPath_demo.md",
-    "EB-tresos-generator/7-2/module_code_generator.md",
-    "EB-tresos-generator/7-2/model_generator_cmd_list.md",
-    "EB-tresos-generator/7-2/256-266.md",
-    "EB-tresos-generator/7-2/251-256.md",
-    "EB-tresos-generator/7-2/241-250.md",
-    "EB-tresos-generator/7-2",
-    "EB-tresos-generator/6-config-modules/XPath_generic.md",
-    "EB-tresos-generator/6-config-modules/XPath_expression refer to chapter 6-3.md",
-    "EB-tresos-generator/6-config-modules/lst-ctl-temple(NB generated).md",
-    "EB-tresos-generator/6-config-modules/147-170GUI.md",
-    "EB-tresos-generator/6-config-modules/0start-147.md",
-    "EB-tresos-generator/6-config-modules",
-    "EB-tresos-generator/5-3/136-146.md",
-    "EB-tresos-generator/5-3/125-135.md",
-    "EB-tresos-generator/5-3/114-124.md",
-    "EB-tresos-generator/5-3/05.3-start.md",
-    "EB-tresos-generator/5-3",
-    "EB-tresos-generator/5-2/90-100(99important).md",
-    "EB-tresos-generator/5-2/5-2-1-81_90.md",
-    "EB-tresos-generator/5-2/101-112CreateNewModule.md",
-    "EB-tresos-generator/5-2",
-    "EB-tresos-generator/5-1/chapter5.md",
-    "EB-tresos-generator/5-1",
-    "EB-tresos-generator",
-    "SWC RTE LINIF Data Pipeline-2026-03-06-090819.png",
-    "未命名 1.base",
+    "daily_work/IPCS/QAC_NOTES/-macro.md",
+    "daily_work/unit_test/Vcast_Summary-PROJECT.md",
+    "daily_work/unit_test/user-code_optional.md",
+    "daily_work/unit_test/Environment_user_code.md",
+    "daily_work/unit_test/Choose_UUTs_and_Stubs.md",
+    "daily_work/IPCS/architecture_design/requirement.md",
+    "daily_work/IPCS/architecture_design/design_notes.md",
+    "daily_work/IPCS/architecture_design/architecture_v2.0.0.md",
+    "daily_work/IPCS/architecture_design/architecture_doc.md",
+    "daily_work/IPCS/graph/chapter 1.md",
+    "daily_work/IPCS/chapter 3.md",
+    "daily_work/IPCS/chapter 2.md",
+    "daily_work/IPCS/chapter 6.md",
+    "daily_work/IPCS/chapter 8.md",
+    "daily_work/IPCS/chapter-samples.md",
+    "daily_work/IPCS/ipcs-linux-driver-ext.md",
+    "daily_work/IPCS/user_manual.md",
+    "daily_work/IPCS/user_manual_original.md",
+    "Pasted image 20251217000504.png",
     "未命名.base",
+    "image",
+    "未命名.canvas",
+    "未命名 1.base",
+    "Excalidraw",
+    "daily_work/IPCS/update-plugin",
+    "EB-tresos-generator/plugins",
+    "EB-tresos-generator/7-2",
+    "EB-tresos-generator/6-config-modules",
+    "EB-tresos-generator/5-3",
+    "EB-tresos-generator/5-2",
+    "SWC RTE LINIF Data Pipeline-2026-03-06-090819.png",
     "Pasted image 20260422112550.png",
     "Pasted image 20260313184516.png",
     "SWC RTE LINIF Data Pipeline-2026-03-09-073046.png",
     "Pasted image 20260306191336.png",
     "Pasted image 20260205154017.png",
     "Pasted image 20260205153904.png",
-    "Pasted image 20260205153801.png",
-    "Pasted image 20251217000504.png"
+    "Pasted image 20260205153801.png"
   ]
 }
