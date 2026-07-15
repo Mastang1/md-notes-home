@@ -13,12 +13,22 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily_work/tcf_server-boot/summary.md",
+                "file": "daily_work/EB plug-in links and cache clear.md",
                 "mode": "source",
-                "source": false
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
               "icon": "lucide-file",
-              "title": "summary"
+              "title": "EB plug-in links and cache clear"
             }
           }
         ]
@@ -53,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "blob",
+                "query": "ipcs",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -188,32 +198,32 @@
   },
   "active": "0bcc910129ebadc5",
   "lastOpenFiles": [
-    "daily_work/tcf_server-boot/S 32G 安全启动 补充.md",
+    "EB-tresos-generator/links.md",
+    "daily_work/EB plug-in links and cache clear.md",
+    "daily_work/IPCS/user_manual.md",
+    "daily_work/IPCS/user_manual_original.md",
+    "daily_work/IPCS/release_notes.md",
+    "daily_work/IPCS/chapter-samples.md",
+    "daily_work/IPCS/ipcs-linux-driver-ext.md",
+    "daily_work/IPCS/update-plugin/update ipcs plugin guidance.md",
+    "daily_work/IPCS/0-linux-ipcs-theory.md",
     "daily_work/tcf_server-boot/summary.md",
     "daily_work/tcf_server-boot/S32G boot note.md",
+    "daily_work/tcf_server-boot/S 32G 安全启动 补充.md",
+    "daily_work/BUS-LIN/被动唤醒过程.md",
+    "arm_toolchain/makefile_etc.md.md",
+    "arm_toolchain/linker.md.md",
+    "arm_toolchain/GNU_Make_Functions_CheatSheet.md",
+    "arm_develop/fatFS.md.md",
+    "arm_develop/Embedded Software Layered Architecture.md",
+    "arm_develop/bootloader/bootloader.md.md",
     "daily_work/IPCS/ai_output/framework.md",
-    "daily_work/IPCS/0-linux-ipcs-theory.md",
     "daily_work/unit_test/vcast-print in UI.md",
     "daily_work/unit_test/Vcast-CLI.md",
     "daily_work/IPCS/QAC_NOTES/Helix Summary.md",
     "daily_work/IPCS/QAC_NOTES/-macro.md",
     "daily_work/unit_test/Vcast_Summary-PROJECT.md",
     "daily_work/unit_test/user-code_optional.md",
-    "daily_work/unit_test/Environment_user_code.md",
-    "daily_work/unit_test/Choose_UUTs_and_Stubs.md",
-    "daily_work/IPCS/architecture_design/requirement.md",
-    "daily_work/IPCS/architecture_design/design_notes.md",
-    "daily_work/IPCS/architecture_design/architecture_v2.0.0.md",
-    "daily_work/IPCS/architecture_design/architecture_doc.md",
-    "daily_work/IPCS/graph/chapter 1.md",
-    "daily_work/IPCS/chapter 3.md",
-    "daily_work/IPCS/chapter 2.md",
-    "daily_work/IPCS/chapter 6.md",
-    "daily_work/IPCS/chapter 8.md",
-    "daily_work/IPCS/chapter-samples.md",
-    "daily_work/IPCS/ipcs-linux-driver-ext.md",
-    "daily_work/IPCS/user_manual.md",
-    "daily_work/IPCS/user_manual_original.md",
     "Pasted image 20251217000504.png",
     "未命名.base",
     "image",

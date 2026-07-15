@@ -1,6 +1,7 @@
-## 1. 个人总结 boot过程
- - 1. HSE核心启动后执行bootrom，但是bootrom需要CDCD（初始化始终、ram）、IVT（到IVT所在的固定定制查询有哪些image需要boot<实际中，只放自开发的bootloader image>）；
- - 2. 后续的boot过程，控制权在bootloader
+## 1. 个人总结 boot过程(No flashLoader)
+ - 1. HSE核心启动后执行bootrom，但是bootrom需要CDCD（初始化clock、ram）、IVT（到IVT所在的固定定制查询有哪些image需要boot<实际中，只放自开发的bootloader image>）；
+ - 2. 开启CM7 core 0;
+ - 3. 后续的boot过程，控制权在bootloader
 
 ##### 补充：串行boot过程
  - - **HSE_M7**：安保专属，极度封闭，只跑 NXP 安全代码，负责校验和密码学。
@@ -8,13 +9,18 @@
 - **App_M7 (如 Cortex-M7_0/1/2)**：跑业务的，完全开放，跑 Autosar、你的裸机代码，或者用来跑 Flashloader 烧写 Flash。
 
 ##### 当前C1的启动链路💚
+> _阶段1: 打包为blob,然后根据bootloader协议打包blob和images为最终image
+> 阶段2.1: 通过boot ROM加载flashloader.bin,接收images(bootlader/apps)写入到指定介质;
+> 阶段2.2: 跳转到bootloader,bootloader依次启动其他images;
+
  - 1. 打包阶段：通过blob-tool打包 DCD、BSE firmware、IVT、first_app(BootLoader.bin)生成blob.bin
  - 2. 应用打包阶段：使用app_packer工具，打包blob.bin 及soc几个核心的bin文件，大概是将启动地址放到了bootloader.bin的指定偏移地址，生成mip_bl_app.bin
  - 3. 串行启动(flashtool show time)：HSE核心启动、接收flash_loader.bin到ram中；BSE core操作启动cm7_0,跳转到flash_loader.bin执行；进入到flash_tool交互模式，通过发送 命令及参数开启文件传输及数据存储(qspi/sd/emmc)；注意：flash_loader在ram中。（一次串行启动完成所有传输）
  - 4. QSPI启动模式启动：HSE启动，执行boot流程，查询IVT，HES core执行HSE firmware，CM7_0执行bootloader代码，bootloader根据固定便宜位置的app地址及跳转地址执行顺序加载多核运行；
 
+
 #### 修正后：
-> "芯片上电后，**HSE_M7** 核心唯一解复位并执行固化的 **BootROM**。BootROM 会去外部存储媒介的固定偏移地址寻找 **IVT（镜像向量表）**。
+>"芯片上电后，**HSE_M7** 核心唯一解复位并执行固化的 **BootROM**。BootROM 会去外部存储媒介的固定偏移地址寻找 **IVT（镜像向量表）**。
 > 
 > BootROM 会解析 IVT，如果存在 **DCD** 表，则优先执行它来初始化复杂的时钟和外部 DDR。随后，BootROM 根据 IVT 的指引，将 **HSE 官方固件**和**自研的 Bootloader (App Image)** 载入相应的内存并进行安全校验。
 > 
